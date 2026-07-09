@@ -182,6 +182,37 @@
   .chip:hover{border-color:var(--line-strong);color:var(--surface)}
   .chip .k{color:var(--muted-dim)}
 
+  /* ---------- publications ---------- */
+  .pubs{list-style:none;counter-reset:pub;display:flex;flex-direction:column}
+  .pub{
+    counter-increment:pub;position:relative;
+    display:grid;grid-template-columns:40px 1fr minmax(160px,220px);gap:10px 22px;align-items:baseline;
+    padding:16px 4px;border-top:1px solid var(--line);transition:background .2s;
+  }
+  .pub:last-child{border-bottom:1px solid var(--line)}
+  .pub:hover{background:var(--card-hover)}
+  .pub::before{
+    content:counter(pub,decimal-leading-zero);
+    font-family:var(--mono);font-size:.76rem;color:var(--signal);
+  }
+  .pub-title{font-family:var(--display);font-weight:600;font-size:1rem;
+    letter-spacing:-.01em;line-height:1.34;color:var(--surface);transition:color .2s}
+  .pub:hover .pub-title{color:var(--signal)}
+  .pub-meta{font-family:var(--mono);font-size:.74rem;color:var(--muted-dim);
+    line-height:1.5;text-align:right}
+  .pub-meta .year{color:var(--chl)}
+  .pub-lead{display:inline-block;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--abyss);background:var(--signal);border-radius:2px;padding:2px 6px;margin-right:8px;
+    vertical-align:1px}
+  @media(max-width:640px){
+    .pub{grid-template-columns:1fr;gap:7px}
+    .pub::before{position:absolute;top:16px;right:4px}
+    .pub-meta{text-align:left}
+  }
+  .scholar-link{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:.82rem;
+    color:var(--signal);border-bottom:1px solid transparent;transition:border-color .2s;padding-bottom:2px}
+  .scholar-link:hover{border-color:var(--signal)}
+
   footer{padding:70px 0 90px;border-top:1px solid var(--line);margin-top:24px}
   .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-end}
   .foot-h{font-family:var(--display);font-weight:600;font-size:1.9rem;letter-spacing:-.01em;max-width:16ch}
@@ -202,6 +233,7 @@
       <a href="#carbon">Water quality</a>
       <a href="#lakes">Lake modelling</a>
       <a href="#forecast">Forecasting</a>
+      <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -254,7 +286,7 @@
 <section class="zone" id="tools">
   <div class="wrap">
     <div class="zone-head">
-      <span class="zone-depth">// epilimnion</span>
+      <span class="zone-depth">01</span>
       <h2 class="zone-title">Interactive tools &amp; dashboards</h2>
       <p class="zone-note">Browser-based apps and live dashboards — no install required.</p>
     </div>
@@ -266,7 +298,7 @@
 <section class="zone" id="carbon">
   <div class="wrap">
     <div class="zone-head">
-      <span class="zone-depth">// metalimnion</span>
+      <span class="zone-depth">02</span>
       <h2 class="zone-title">Water quality &amp; carbon</h2>
       <p class="zone-note">fDOM and dissolved organic carbon: training, attribution and projection.</p>
     </div>
@@ -278,7 +310,7 @@
 <section class="zone" id="lakes">
   <div class="wrap">
     <div class="zone-head">
-      <span class="zone-depth">// hypolimnion</span>
+      <span class="zone-depth">03</span>
       <h2 class="zone-title">Lake &amp; reservoir modelling</h2>
       <p class="zone-note">Physical models, global simulations and climate-driven analysis.</p>
     </div>
@@ -290,7 +322,7 @@
 <section class="zone" id="forecast">
   <div class="wrap">
     <div class="zone-head">
-      <span class="zone-depth">// benthic</span>
+      <span class="zone-depth">04</span>
       <h2 class="zone-title">Forecasting &amp; verification</h2>
       <p class="zone-note">Seasonal and weather forecasts, drought, and how well they score.</p>
     </div>
@@ -298,11 +330,26 @@
   </div>
 </section>
 
+<!-- ===================== PUBLICATIONS ===================== -->
+<section class="zone" id="publications">
+  <div class="wrap">
+    <div class="zone-head">
+      <span class="zone-depth">05</span>
+      <h2 class="zone-title">Publications</h2>
+      <p class="zone-note">Peer-reviewed work, newest first. Full list on Google Scholar.</p>
+    </div>
+    <ol class="pubs" id="pub-list"></ol>
+    <a class="scholar-link" href="https://scholar.google.es/citations?user=x2WrS_EAAAAJ" target="_blank" rel="noopener">
+      View all publications on Google Scholar ↗
+    </a>
+  </div>
+</section>
+
 <!-- ===================== FORKS ===================== -->
 <section class="zone" id="contrib">
   <div class="wrap">
     <div class="zone-head">
-      <span class="zone-depth">// sediment</span>
+      <span class="zone-depth">06</span>
       <h2 class="zone-title">Contributions &amp; forks</h2>
       <p class="zone-note">Community models and consortia I build on.</p>
     </div>
@@ -317,10 +364,9 @@
       <div class="foot-h">Let's model some water.</div>
       <div class="foot-links">
         <a href="https://github.com/danielmerbet" target="_blank" rel="noopener">→ github.com/danielmerbet</a>
+        <a href="https://scholar.google.es/citations?user=x2WrS_EAAAAJ" target="_blank" rel="noopener">→ google scholar</a>
+        <a href="https://www.linkedin.com/in/daniel-mercado-bett%C3%ADn-24500725/" target="_blank" rel="noopener">→ linkedin</a>
         <a href="https://danielmerbet.github.io/cv" target="_blank" rel="noopener">→ curriculum vitae</a>
-        <!-- EDIT these two with your real links / email -->
-        <a href="mailto:your.email@example.com">→ email me</a>
-        <a href="#" target="_blank" rel="noopener">→ google scholar</a>
       </div>
     </div>
     <div class="colophon">
@@ -346,7 +392,7 @@ const LANG_COLORS = {
 
 const PROJECTS = {
   tools: [
-    {name:"fdom_weather_app", lang:"HTML", live:true,
+    {name:"fdom_weather_app", lang:"HTML", live:"https://danielmerbet.github.io/fdom_weather_app/static/plot.html",
      desc:"Online tool that forecasts fluorescence Dissolved Organic Matter (fDOM) driven by weather inputs — turning drinking-water source monitoring into a live prediction."},
     {name:"cassa_aigua_subterrania", lang:"HTML", live:true,
      desc:"Interactive dashboard of groundwater levels and quality for Cassà de la Selva, making local aquifer data explorable in the browser."},
@@ -427,6 +473,70 @@ for(const key of ["tools","carbon","lakes","forecast"]){
 document.getElementById("grid-forks").innerHTML = PROJECTS.forks.map(n =>
   `<a class="chip" href="${repoUrl(n)}" target="_blank" rel="noopener"><span class="k">fork</span> ${n} ↗</a>`
 ).join("");
+
+/* ============================================================
+   PUBLICATIONS  —  full list (reverse-chronological), from CV.
+   Set lead:true on any paper where you are first author so it
+   gets the "1st author" tag (only verified ones are marked now).
+   ============================================================ */
+const PUBLICATIONS = [
+  {title:"Global lake anoxia is projected to intensify under climate change",
+   venue:"Communications Sustainability", year:"2026", doi:"10.1038/s44458-026-00093-z"},
+  {title:"Seasonal forecasting of dissolved organic carbon in a Mediterranean catchment: enhancing upstream control of disinfection by-product precursors",
+   venue:"Environmental Monitoring and Assessment", year:"2026", doi:"10.1007/s10661-026-15288-z"},
+  {title:"Scenario set-up and the new CMIP6-based climate-related forcings within the third round of ISIMIP (ISIMIP3b, group I and II)",
+   venue:"Geoscientific Model Development", year:"2026", doi:"10.5194/gmd-19-4095-2026"},
+  {lead:true, title:"A machine learning approach to driver attribution of dissolved organic matter dynamics in two contrasting freshwater systems",
+   venue:"Biogeosciences", year:"2026", doi:"10.5194/bg-23-2661-2026"},
+  {title:"Integration of the Global Water and Lake Sectors within the ISIMIP framework through scaling of streamflow inputs to lakes",
+   venue:"Geoscientific Model Development", year:"2026", doi:"10.5194/gmd-19-41-2026"},
+  {title:"Ecological memory contributes to a spatial mismatch in water quality trends between the surface and bottom waters of 382 temperate lakes",
+   venue:"Ecology Letters", year:"2025", doi:"10.1111/ele.70243"},
+  {title:"A multi-model assessment of global freshwater temperature and thermoelectric power supply under climate change",
+   venue:"Environmental Research: Water", year:"2025", doi:"10.1088/3033-4942/addffa"},
+  {title:"Enhanced heating effect of lakes under global warming",
+   venue:"Nature Communications", year:"2025", doi:"10.1038/s41467-025-59291-3"},
+  {title:"Combining a multi-lake model ensemble for climate change impacts",
+   venue:"Water Resources Research", year:"2024", doi:"10.1029/2023WR036511"},
+  {title:"The 2024 “Hacking Limnology” workshop series and virtual summit: increasing inclusion, participation and representation in the aquatic sciences",
+   venue:"Limnology and Oceanography Bulletin", year:"2024", doi:"10.1002/lob.10672"},
+  {title:"Scenario set-up and forcing data for impact model evaluation and impact attribution within the third round of ISIMIP (ISIMIP3a)",
+   venue:"Geoscientific Model Development", year:"2024", doi:"10.5194/gmd-17-1-2024"},
+  {title:"A conceptual framework to disentangle land use and climate change impacts on water balance components and sediment yield",
+   venue:"Environment, Development and Sustainability", year:"2023", doi:"10.1007/s10668-023-04179-9"},
+  {title:"Impacts of diffuse urban stressors on stream benthic communities and ecosystem functioning: a review",
+   venue:"Limnetica", year:"2023", doi:"10.23818/limn.43.07"},
+  {title:"Sources of skill in lake temperature, discharge and ice-off seasonal forecasting tools",
+   venue:"Hydrology and Earth System Sciences", year:"2023", doi:"10.5194/hess-27-1361-2023"},
+  {title:"A framework for ensemble modelling of climate change impacts on lakes worldwide: the ISIMIP Lake Sector",
+   venue:"Geoscientific Model Development", year:"2022", doi:"10.5194/gmd-15-4597-2022"},
+  {title:"Opportunities for seasonal forecasting to support water management outside the tropics",
+   venue:"Hydrology and Earth System Sciences", year:"2022", doi:"10.5194/hess-26-1389-2022"},
+  {title:"Towards the evaluation of regional ecosystem integrity using NDVI, brightness temperature and surface heterogeneity",
+   venue:"Science of the Total Environment", year:"2021", doi:"10.1016/j.scitotenv.2021.148994"},
+  {lead:true, title:"Forecasting water temperature in lakes and reservoirs using seasonal climate prediction",
+   venue:"Water Research", year:"2021", doi:"10.1016/j.watres.2021.117286"},
+  {title:"Phenological shifts in lake stratification under climate change",
+   venue:"Nature Communications", year:"2021", doi:"10.1038/s41467-021-22657-4"},
+  {title:"Evaluation of ecological integrity in landscape based on remote sensing data",
+   venue:"Ecological Integrity in Science and Law (book chapter)", year:"2020", doi:"10.1007/978-3-030-46259-8_14"},
+  {title:"Long-term water balance partitioning explained by physical and ecological characteristics in free-flowing river basins of the world",
+   venue:"Ecohydrology", year:"2019", doi:"10.1002/eco.2072"},
+  {title:"Assessing changes in extreme river flow regulation from non-stationarity in hydrological scaling laws",
+   venue:"Journal of Hydrology", year:"2018", doi:"10.1016/j.jhydrol.2018.05.025"},
+  {title:"The ecology of peace: preparing Colombia for new political and planetary climates",
+   venue:"Frontiers in Ecology and the Environment", year:"2018", doi:"10.1002/fee.1950"},
+  {title:"Scaling properties reveal regulation of river flows in the Amazon through a “forest reservoir”",
+   venue:"Hydrology and Earth System Sciences", year:"2018", doi:"10.5194/hess-22-1735-2018"},
+  {title:"Global synthesis of forest cover effects on long-term water balance partitioning in large basins",
+   venue:"Hydrology and Earth System Sciences (Discussions)", year:"2017", doi:"10.5194/hess-2017-550"}
+];
+
+document.getElementById("pub-list").innerHTML = PUBLICATIONS.map(p => `
+    <li class="pub">
+      <a class="pub-title" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">${p.title}</a>
+      <span class="pub-meta">${p.lead ? '<span class="pub-lead">1st author</span>' : ''}${p.venue} · <span class="year">${p.year}</span></span>
+    </li>`).join("");
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>

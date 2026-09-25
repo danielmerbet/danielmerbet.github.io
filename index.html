@@ -495,8 +495,7 @@ document.getElementById("grid-forks").innerHTML = PROJECTS.forks.map(n =>
 
 /* ============================================================
    PUBLICATIONS — full list (reverse-chronological), from CV.
-   Set lead:true on any paper where you are first author so it
-   gets the "1st author" tag (only verified ones are marked now).
+   Ordered newest first.
 ============================================================ */
 const PUBLICATIONS = [
   {title:"Drying of the Aral Sea reshapes the anthropogenic carbon inventory of Central Asia",
@@ -507,7 +506,7 @@ const PUBLICATIONS = [
    venue:"Environmental Monitoring and Assessment", year:"2026", doi:"10.1007/s10661-026-15288-z"},
   {title:"Scenario set-up and the new CMIP6-based climate-related forcings within the third round of ISIMIP (ISIMIP3b, group I and II)",
    venue:"Geoscientific Model Development", year:"2026", doi:"10.5194/gmd-19-4095-2026"},
-  {lead:true, title:"A machine learning approach to driver attribution of dissolved organic matter dynamics in two contrasting freshwater systems",
+  {title:"A machine learning approach to driver attribution of dissolved organic matter dynamics in two contrasting freshwater systems",
    venue:"Biogeosciences", year:"2026", doi:"10.5194/bg-23-2661-2026"},
   {title:"Integration of the Global Water and Lake Sectors within the ISIMIP framework through scaling of streamflow inputs to lakes",
    venue:"Geoscientific Model Development", year:"2026", doi:"10.5194/gmd-19-41-2026"},
@@ -535,7 +534,7 @@ const PUBLICATIONS = [
    venue:"Hydrology and Earth System Sciences", year:"2022", doi:"10.5194/hess-26-1389-2022"},
   {title:"Towards the evaluation of regional ecosystem integrity using NDVI, brightness temperature and surface heterogeneity",
    venue:"Science of the Total Environment", year:"2021", doi:"10.1016/j.scitotenv.2021.148994"},
-  {lead:true, title:"Forecasting water temperature in lakes and reservoirs using seasonal climate prediction",
+  {title:"Forecasting water temperature in lakes and reservoirs using seasonal climate prediction",
    venue:"Water Research", year:"2021", doi:"10.1016/j.watres.2021.117286"},
   {title:"Phenological shifts in lake stratification under climate change",
    venue:"Nature Communications", year:"2021", doi:"10.1038/s41467-021-22657-4"},
@@ -556,7 +555,7 @@ const PUBLICATIONS = [
 document.getElementById("pub-list").innerHTML = PUBLICATIONS.map(p => `
   <li class="pub">
     <a class="pub-title" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">${p.title}</a>
-    <span class="pub-meta">${p.lead ? '<span class="pub-lead">1st author</span>' : ''}${p.venue} · <span class="year">${p.year}</span></span>
+    <span class="pub-meta">${p.venue} · <span class="year">${p.year}</span></span>
   </li>`).join("");
 
 document.getElementById("yr").textContent = new Date().getFullYear();

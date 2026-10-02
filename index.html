@@ -397,6 +397,15 @@ const LANG_COLORS = {
 
 const PROJECTS = {
   tools: [
+
+    {name:"Floods_Girona-Spain", title:"Girona Flood Model", lang:"HTML", live:true,
+     desc:"2D hydraulic flood model (ANUGA) for the Ter & Onyar rivers through Girona — calibrated against two real storms, the January 2026 event and Storm Gloria 2020, with full skill metrics and a reproducible pipeline."},
+    {name:"gw_catalunya", title:"Catalunya Groundwater Model", lang:"HTML", live:true,
+     desc:"Regional MODFLOW 6/FloPy groundwater model of Catalonia, coupled with seasonal water-table forecasts fit to ACA's public piezometric network (~2,200 wells)."},
+    {name:"hydro_tool", title:"NEREIDA Seasonal Forecast Viewer", lang:"HTML", repo:"https://github.com/NEREIDACA/hydro_tool", live:"https://nereidaca.github.io/hydro_tool/",
+     desc:"Operational seasonal streamflow and reservoir forecast viewer for the Sau–Susqueda–Pasteral cascade, built for the Catalan Water Agency (ACA) and used daily in real water-management decisions."},
+    {name:"salintrusion_tool", title:"Saline Intrusion Forecast Map", lang:"HTML", repo:"https://github.com/NEREIDACA/salintrusion_tool", live:"https://nereidaca.github.io/salintrusion_tool/",
+     desc:"Interactive map of monthly seasonal saline-water-intrusion risk at groundwater wells along the Ter and Tordera coastal aquifers — a CatBoost model on SEAS5.1-driven streamflow, updated automatically every month."},
     {name:"fdom_weather_app", title:"fDOM Weather Forecast", lang:"HTML", live:"https://danielmerbet.github.io/fdom_weather_app/static/plot.html",
      desc:"Online tool that forecasts fluorescence Dissolved Organic Matter (fDOM) driven by weather inputs — turning drinking-water source monitoring into a live prediction."},
     {name:"balance-partitioning", title:"Water Balance Partitioning", lang:"HTML", live:true,
@@ -413,14 +422,6 @@ const PROJECTS = {
      desc:"Hydrological forecasting application — streamflow and reservoir inputs served through a lightweight app."},
     {name:"weather_app", title:"Weather Data App", lang:"Python",
      desc:"Weather-data application that ingests forecast products and feeds the downstream water-quality tools."},
-    {name:"Floods_Girona-Spain", title:"Girona Flood Model", lang:"HTML", live:true,
-     desc:"2D hydraulic flood model (ANUGA) for the Ter & Onyar rivers through Girona — calibrated against two real storms, the January 2026 event and Storm Gloria 2020, with full skill metrics and a reproducible pipeline."},
-    {name:"gw_catalunya", title:"Catalunya Groundwater Model", lang:"HTML", live:true,
-     desc:"Regional MODFLOW 6/FloPy groundwater model of Catalonia, coupled with seasonal water-table forecasts fit to ACA's public piezometric network (~2,200 wells)."},
-    {name:"hydro_tool", title:"NEREIDA Seasonal Forecast Viewer", lang:"HTML", repo:"https://github.com/NEREIDACA/hydro_tool", live:"https://nereidaca.github.io/hydro_tool/",
-     desc:"Operational seasonal streamflow and reservoir forecast viewer for the Sau–Susqueda–Pasteral cascade, built for the Catalan Water Agency (ACA) and used daily in real water-management decisions."},
-    {name:"salintrusion_tool", title:"Saline Intrusion Forecast Map", lang:"HTML", repo:"https://github.com/NEREIDACA/salintrusion_tool", live:"https://nereidaca.github.io/salintrusion_tool/",
-     desc:"Interactive map of monthly seasonal saline-water-intrusion risk at groundwater wells along the Ter and Tordera coastal aquifers — a CatBoost model on SEAS5.1-driven streamflow, updated automatically every month."},
   ],
   carbon: [
     {name:"driver_attribution_fdom", title:"fDOM Driver Attribution", lang:"R",
